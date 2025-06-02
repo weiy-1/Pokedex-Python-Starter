@@ -1,0 +1,16 @@
+import requests     #do "pip install requests" in terminal
+
+response = requests.get("https://raw.githubusercontent.com/WhalenSITHS/Pokedex-Python-Starter/main/pokedex.json")
+
+try:
+    data = response.json()
+    print(data[3]['name']['english'])   # number = id, name is name of id number, english is eng name of id number
+
+#or for all pokemon:
+
+    #for data in data:
+        #print(data['name']['english'])
+
+
+except KeyError:
+    print("Failed to fetch data.")
