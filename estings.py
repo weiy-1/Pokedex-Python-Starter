@@ -1,6 +1,19 @@
 import requests     #do "pip install requests" in terminal
 
-response = requests.get("https://raw.githubusercontent.com/WhalenSITHS/Pokedex-Python-Starter/main/pokedex.json")
+response = requests.get("https://raw.githubusercontent.com/WhalenSITHS/Pokedex-Python-Starter/main/moves.json")
+
+try:
+    data = response.json()
+    for moving in data:
+        if moving['pp'] <= 10:
+            print(moving['ename'])
+
+except Exception as e:
+    print("Failed to fetch dataings", e)
+
+
+
+""" response = requests.get("https://raw.githubusercontent.com/WhalenSITHS/Pokedex-Python-Starter/main/pokedex.json")
 
 try:
     data = response.json()
@@ -13,4 +26,4 @@ try:
 
 
 except KeyError:
-    print("Failed to fetch data.")
+    print("Failed to fetch data.") """
