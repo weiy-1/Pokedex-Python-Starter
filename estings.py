@@ -5,14 +5,14 @@ response = requests.get("https://raw.githubusercontent.com/WhalenSITHS/Pokedex-P
 try:
     data = response.json()
     for moving in data:
-        if moving['pp'] <= 10:
+        if moving['id'] <= 10:
             print(moving['ename'])
 
 except Exception as e:
     print("Failed to fetch dataings", e)
 
 
-
+#this code for pokedex.json, it bit more commplex
 """ response = requests.get("https://raw.githubusercontent.com/WhalenSITHS/Pokedex-Python-Starter/main/pokedex.json")
 
 try:
